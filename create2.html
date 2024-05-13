@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        header h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        .progress-bar div {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input[type="text"], select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #555;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QUIZMASTER</h1>
+            <div id="links">
+            </div>
+        </header>
+
+        <main>
+            <div class="progress-bar">
+                
+            </div>
+
+            <h2>Create Quiz</h2>
+
+            <form action="question.php" method="post">
+                <input type="text" id="topic" name="topic" placeholder="Enter Topic Name">
+
+                <input type="text" id="question" name="question" placeholder="Enter Question">
+                <input type="text" id="option1" name="option1" placeholder="Option 1">
+                <input type="text" id="option2" name="option2" placeholder="Option 2">
+                <input type="text" id="option3" name="option3" placeholder="Option 3">
+                <input type="text" id="option4" name="option4" placeholder="Option 4">
+                <select id="correct_option" name="correct_option">
+                    <option value="" disabled selected>Correct Option</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

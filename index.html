@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizMaster: Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        #header h1 {
+            margin: 0;
+        }
+        #header #links {
+            display: flex;
+            gap: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #main-content {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #main-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #main-content form input {
+            padding: 10px 5px;
+            border: 1px solid #ced4da;
+        }
+        #main-content form button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>QUIZMASTER</h1>
+        <div id="links">
+            <button id="login">Log in</button>
+            <button id="register">Register</button>
+        </div>
+    </div>
+    <div id="main-content">
+        <h2>QuizMaster: Register</h2>
+        <form id="registration-form" action="register.php" method="post">
+            <input type="text" name="username" id="username" placeholder="User name">
+            <input type="email" name="email" id="email" placeholder="Email Address">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <button type="submit" id="register-btn">Register</button>
+            <button type="button" id="login-btn">Already have an account? Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("login").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+        document.getElementById("login-btn").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+        document.getElementById("register").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    
+        
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+    
+            
+            var formData = new FormData(this);
+    
+            
+            if (formData.get("username") === "" || formData.get("email") === "" || formData.get("password") === "") {
+                alert("All fields are required");
+                return;
+            }
+    
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'register.php', true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === 'success') {
+                            alert(response.message); // Show success message
+                            window.location.href = "login.html"; // Redirect to login page
+                        } else {
+                            alert(response.message); 
+                        }
+                    } else {
+                        alert('Error occurred. Please try again.'); 
+                    }
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>

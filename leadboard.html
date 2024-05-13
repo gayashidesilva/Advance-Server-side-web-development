@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizMaster: Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #e9e8e8;
+        }
+        #header h1 {
+            margin: 0;
+        }
+        #header #links {
+            display: flex;
+            gap: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #header a {
+            color: rgb(189, 186, 186);
+            text-decoration: none;
+        }
+        #main-content {
+            width: 60%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #leaderboard-table th,
+        #leaderboard-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #leaderboard-table th {
+            background-color: #b4b4b4;
+            color: white;
+        }
+        #leaderboard-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>QUIZMASTER</h1>
+        <div id="links">
+           
+            <button id="profile">Profile</button>
+        </div>
+    </div>
+    <div id="main-content">
+        <h2>Leaderboard</h2>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mike Johnson</td>
+                    <td>85</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

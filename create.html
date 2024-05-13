@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizMaster: Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        #header h1 {
+            margin: 0;
+        }
+        #header #links {
+            display: flex;
+            gap: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #main-content {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #main-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #main-content form input {
+            padding: 10px 5px;
+            border: 1px solid #ced4da;
+        }
+        #main-content form button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>QUIZMASTER</h1>
+        <div id="links">
+            <button id="Profile">Profile</button>
+            
+        </div>
+    </div>
+    <div id="main-content">
+        <h2>Create QUIZ</h2>
+        <form id="form">
+            <input type="text" id="topic" placeholder="Create a Topic">
+            <input type="text" id="questions" placeholder="Number of Questions">
+            <input type="text" id="duration" placeholder="Durations">
+            <button type="save" id="save-btn">Save</button>
+            
+        </form>
+    </div>
+</body>
+</html>

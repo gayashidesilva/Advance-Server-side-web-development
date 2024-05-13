@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizMaster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        #header h1 {
+            margin: 0;
+        }
+        #header #links {
+            display: flex;
+            gap: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #main-content {
+            width: 60%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #main-content p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        #topics {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .topic {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .topic-name {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            font-size: 0.8em; /* Reduce font size to 0.8em */
+            color: black;
+        }
+        .row {
+            display: flex;
+            flex-direction: column; /* Display as column */
+            gap: 20px;
+            align-items: center; /* Align items in the center */
+        }
+        #main-content button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>QUIZMASTER</h1>
+    <!--<button id="profile">Profile</button> Added a login button for demonstration -->
+    </div>
+    <div id="main-content">
+        <h2>Be The QuizMaster</h2>
+
+        <p>Choose Your Quiz Topic and Become the QuizMaster</p>
+        <div id="topics">
+            <div class="row">
+                <div class="topic">
+                    <div class="topic-name">Topic 1</div>
+                </div>
+                <div class="topic">
+                    <div class="topic-name">Topic 6</div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="topic">
+                    <div class="topic-name">Topic 2</div>
+                </div>
+                <div class="topic">
+                    <div class="topic-name">Topic 7</div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="topic">
+                    <div class="topic-name">Topic 3</div>
+                </div>
+                <div class="topic">
+                    <div class="topic-name">Topic 8</div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="topic">
+                    <div class="topic-name">Topic 4</div>
+                </div>
+                <div class="topic">
+                    <div class="topic-name">Topic 9</div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="topic">
+                    <div class="topic-name">Topic 5</div>
+                </div>
+                <div class="topic">
+                    <div class="topic-name">Topic 10</div>
+                </div>
+            </div>
+            <button id="start">Start</button>
+        </div>
+        <script>
+            
+            document.getElementById("start").onclick = function() {
+                window.location.href = "profile.html";
+            };
+        </script>
+    </div>
+</body>
+</html>

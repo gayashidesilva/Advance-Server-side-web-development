@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizMaster: Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        #header h1 {
+            margin: 0;
+        }
+        #header #links {
+            display: flex;
+            gap: 10px;
+        }
+        #header button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #main-content {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #main-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #main-content form input {
+            padding: 10px 5px;
+            border: 1px solid #ced4da;
+        }
+        #main-content form button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>QUIZMASTER</h1>
+        <div id="links">
+            <button id="login">Log in</button>
+            <button id="register">Register</button>
+        </div>
+    </div>
+    <div id="main-content">
+        <h2>QuizMaster: Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="User name">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" id="login-btn">Login</button>
+            <button type="button" id="register-btn">Don't have an account? Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("login-btn").addEventListener("click", function() {
+            // Get input values
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username or password is empty
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Username and password are required");
+                return;
+            }
+
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "login.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.status === "success") {
+                        alert(response.message);
+                        window.location.href = "home.html"; // Redirect to home page 
+                    } else {
+                        alert(response.message);
+                    }
+                } else {
+                    alert("Error occurred. Please try again.");
+                }
+            };
+
+            
+            xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+        });
+
+        document.getElementById("register").addEventListener("click", function() {
+            window.location.href = "register.html";
+        });
+
+        document.getElementById("register-btn").addEventListener("click", function() {
+            window.location.href = "register.html";
+        });
+    </script>
+</body>
+</html>
